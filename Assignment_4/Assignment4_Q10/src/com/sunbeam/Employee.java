@@ -1,5 +1,7 @@
 package com.sunbeam;
 
+import java.util.Scanner;
+
 public class Employee {
 
 	private int empId;
@@ -35,9 +37,18 @@ public class Employee {
 	}
 	@Override
 	public String toString() {
-		return "Employee [empId=" + empId + ", name=" + name + ", salary=" + salary + "]";
+		return "Employee [empId=" + empId + ", name=" + name + ", salary=" + salary + "]\n";
 	}
 	
-	
+	public void accept()
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter Empid = ");
+		this.empId = sc.nextInt();
+		System.out.println("Enter Name = ");
+		this.name = sc.next();
+		System.out.println("Enter Salary = ");
+		this.salary = sc.nextDouble();
+	}
 	
 }
