@@ -11,11 +11,24 @@ public class TestAddNodes {
 		l1.addFirst(40);
 		l1.displayList();
 		
-		l1.addNodeAfterGivenNode(66, 4);
+		l1.addNodeAfterGivenNode(66, 30);
 		l1.displayList();
 		
-		l1.addNodeBeforeGivenNode(99, 4);
+		l1.addNodeAfterGivenNode(78, 30);
+		l1.displayList(); 
+		
+		l1.addNodeBeforeGivenNode(99, 78);
+		l1.displayList();
+		
+		l1.addNodeBeforeGivenNode(100, 40);
+		l1.displayList();
+		
+		l1.addNodeBeforeGivenNode(29, 30);
+		l1.displayList();
+		
+		l1.addNodeBeforeGivenNode(50, 10);
 		l1.displayList();
 	}
+	
 
 }

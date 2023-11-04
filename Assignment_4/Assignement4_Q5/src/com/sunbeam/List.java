@@ -43,32 +43,36 @@ public class List {
 		}
 	}
 	
-	public void addNodeBeforeGivenNode(int value, int pos) {
+	public void addNodeBeforeGivenNode(int value, int oldvalue) {
 
 		Node newnode = new Node(value);
+		Node oldnode = new Node(oldvalue);
+		Node trav = head;
 		if(isEmpty())
 			head = newnode;
-		else if (pos <= 1)
+		else if ( head.data==oldnode.data)
 			addFirst(value);
 		else {
-			Node trav = head;
-			for(int i = 1 ; i < pos-1 && trav.next != null ; i++)
+			
+			while(trav.next.data!=oldnode.data)
 				trav = trav.next;
 			newnode.next = trav.next;
-			trav.next = newnode;
+			trav.next= newnode;
 		}
 	}
-	public void addNodeAfterGivenNode(int value, int pos) {
+	public void addNodeAfterGivenNode(int value, int oldnodevalue) {
 
 		Node newnode = new Node(value);
+		Node oldnode = new Node(oldnodevalue);
 		if(isEmpty())
 			head = newnode;
-		else if (pos <= 1)
-			addFirst(value);
-		else {
+		else
+		{
 			Node trav = head;
-			for(int i = 1 ; i <=pos && trav.next != null ; i++)
+			while(oldnode.data!=trav.data)
+			{
 				trav = trav.next;
+			}
 			newnode.next = trav.next;
 			trav.next = newnode;
 		}
